@@ -12,6 +12,10 @@
     <style type="text/css" media="all">
       body { margin-top: 30px; }
     </style>
+    <style type="text/css" media="all">
+        body{ margin-top: 30px;}
+        .templates {display: none;}
+    </style>
   </head>
   <body>
   <div class="markup">
@@ -20,7 +24,7 @@
         <div class="landing-view">
       <div  class="row">
        <div class="one-half column">
-        <h3>Learn Javascript, One Puzzle at a time</h3>
+        <h3>Learn Javascript, One Puzzle at a time.</h3>
          <a href="#problem-1" class="button button-primary" >start now</a>
        </div>
         <div class="one-half column">
@@ -29,6 +33,25 @@
       </div>
     </div>
     </div>
+
+  <div class = 'templates'>
+    <div class='problem-view'>
+      <h3 class='title'></h3>
+      <p data-name ='description'></p>
+      <pre><code data-name='code'></code></pre>
+      <form>
+        <textarea class='u-full-width answer'></textarea>
+        <div>
+          <button class='button-primary check-btn'>Check answer</button>
+          <p class='result'></p>
+        </div>
+      </form>
+    </div>
+    <div>
+      <span>Correct!</span><a>Next Problem</a>
+    </div>
+  </div>
+
   </div>
 
   <script type="text/javascript">

@@ -1,3 +1,7 @@
+/***
+* From book 'Serverless Single Page App'
+*
+***/
 describe('LearnJS', function(){
 
     it('can show a problem view',function(){
@@ -8,7 +12,6 @@ describe('LearnJS', function(){
 
         it('can show the landing page view where there is no hash',function(){
                 learnjs.showView('')
-                console.log($('*'))
                 expect($('.view-container .landing-view').length).toEqual(1)
         });
 
@@ -37,12 +40,29 @@ describe('LearnJS', function(){
 
 
   describe('problem view', function() {
+    var view
+    beforeEach(function(){
+    view = learnjs.problemView('1');
+    })
     it('has a title that includes the problem number', function() {
-      var view = learnjs.problemView('1');
-      expect(view.text()).toEqual('Problem #1 Coming soon!');
+      expect(view.find('.title').text()).toEqual('Problem #1');
     });
 
+    describe('Answer Section', function() {
+        it('can check correct answer by hitting a button', function() {
+          var view = learnjs.problemView('1');
+          view.find('.answer').val('true');
+          view.find('.check-btn').click();
+          expect(view.find('.result').text()).toEqual('Correct!');
 
+        });
 
+        it('can check correct answer by hitting a button', function() {
+          var view = learnjs.problemView('1');
+          view.find('.answer').val('true');
+          view.find('.check-btn').click();
+          expect(view.find('.result').text()).toEqual('Correct!');
 
-    });
+        });
+     });
+ });
